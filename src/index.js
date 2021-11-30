@@ -6,11 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import ContextSample from './components/ContextSample';
 import Hello from './components/Hello';
 import Counter from './components/Counter';
-
+import Error from './components/Error'
+import ErrorBoundary from './components/ErrorBoundary';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Counter/>
+    <ErrorBoundary>
+      <Error />
+    </ErrorBoundary>
+    {/* <Counter/> */}
     {/* <Hello /> */}
     {/* <App /> */}
     {/* <ContextSample /> */}
