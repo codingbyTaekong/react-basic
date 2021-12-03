@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@sentry/react": "^6.15.0",
+    "@sentry/tracing": "^6.15.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-prettier": "^8.3.0",
     "immer": "^8.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -21,8 +25,15 @@
   "eslintConfig": {
     "extends": [
       "react-app",
+      "airbnb",
+      "prettier",
       "react-app/jest"
-    ]
+    ],
+    "rules" : {
+      "no-console" : 0,
+      "react/jsx-filename-extension" : 0,
+      "react/state-in-constructor": 0
+    }
   },
   "browserslist": {
     "production": [

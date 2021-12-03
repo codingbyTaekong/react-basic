@@ -1,4 +1,7 @@
+/* eslint-disable */
 import React, {Component} from 'react';
+import * as Sentry from "@sentry/react";
+
 
 class ErrorBoundary extends Component {
     state = {
@@ -14,6 +17,9 @@ class ErrorBoundary extends Component {
         this.setState({
             error : true
         })
+        if (process.env.NODE_ENV === "production"){
+            Sentry.captureException(error, {extra: info});
+        }
     }
 
     render() {
