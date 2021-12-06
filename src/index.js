@@ -60,8 +60,8 @@ ReactDOM.render(
         </ButtonGroup>
         <ButtonGroup>
           <StyledComponents color="gray" size="large">버튼</StyledComponents>
-          <StyledComponents color="gray" size="medium">버튼</StyledComponents>
-          <StyledComponents color="gray" size="small">버튼</StyledComponents>
+          <StyledComponents color="pink" size="medium">버튼</StyledComponents>
+          <StyledComponents color="blue" size="small">버튼</StyledComponents>
         </ButtonGroup>
       </AppBlock>
     </ThemeProvider>
