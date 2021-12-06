@@ -8,12 +8,17 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "classnames": "^2.3.1",
     "eslint-config-airbnb": "^19.0.2",
     "eslint-config-prettier": "^8.3.0",
     "immer": "^8.0.1",
+    "node-sass": "^5.0.0",
+    "polished": "^4.1.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-scripts": "4.0.3",
+    "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -25,13 +30,12 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "airbnb",
       "prettier",
       "react-app/jest"
     ],
-    "rules" : {
-      "no-console" : 0,
-      "react/jsx-filename-extension" : 0,
+    "rules": {
+      "no-console": 0,
+      "react/jsx-filename-extension": 0,
       "react/state-in-constructor": 0
     }
   },

@@ -13,6 +13,9 @@ import InputSample from './components/InputSample';
 import UserList from './components/UserList';
 import useInputs from './components/useInputs';
 import produce from 'immer';
+import Button from './components/Button';
+import "./App.scss"
+import CheckBox from './components/CheckBox';
 
 function countActiveUsers(users) {
   console.log('활성사용자를 세는중...');
@@ -161,19 +164,66 @@ function App() {
   //   reset()
   // }, [username, email, reset])
   const count = useMemo(() => countActiveUsers(users), [users]);
+  const [check, setCheck] = useState(false);
+  const onChange = (e) => {
+    setCheck(e.target.checked);
+  }
   return (
-    <UserDispatch.Provider value={dispatch}>
-      <CreateUser
-      // username={username}
-      // email={email}
-      // onChange={onChange}
-      // onCreate={onCreate}
-      />
-      <UserList users={users} />
-      <div>활성 사용자 수 : {count}</div>
-      {/* <Counter/> */}
-    </UserDispatch.Provider>
-  );
+    //! 리액트 입문
+    // <UserDispatch.Provider value={dispatch}>
+    //   <CreateUser
+    //   //! 안 쓰는 props
+    //   // username={username}
+    //   // email={email}
+    //   // onChange={onChange}
+    //   // onCreate={onCreate}
+    //   />
+    //   <UserList users={users} />
+    //   <div>활성 사용자 수 : {count}</div>
+    //   <Counter/>
+    // </UserDispatch.Provider>
+    // !
+    // !scss 연습
+    // <div className='App'>
+    //   <div className='buttons'>
+    //     <Button>Button</Button>
+    //     <Button size="large">Button</Button>
+    //     <Button size="small">Button</Button>
+    //   </div>
+    //   <div className='buttons'>
+    //     <Button color="gray">Button</Button>
+    //     <Button color="gray" size="large">Button</Button>
+    //     <Button color="gray" size="small">Button</Button>
+    //   </div>
+    //   <div className='buttons'>
+    //     <Button color="pink">Button</Button>
+    //     <Button color="pink" size="large">Button</Button>
+    //     <Button color="pink" size="small">Button</Button>
+    //   </div>
+    //   <div className='buttons'>
+    //     <Button size="large" outline={true}>Button</Button>
+    //     <Button color="gray" outline={true} size="large">Button</Button>
+    //     <Button color="pink" outline={true} size="small">Button</Button>
+    //   </div>
+    //   <div className='buttons'>
+    //     <Button size="large" fullWidth={true}>Button</Button>
+    //     <Button color="gray" fullWidth={true} size="large">Button</Button>
+    //     <Button color="pink" fullWidth={true} size="large" 
+    //     onClick={()=> {
+    //       console.log('클릭')
+    //     }}
+    //     onMouseMove={()=> {
+    //       console.log('마우스무브')
+    //     }}>Button</Button>
+    //   </div>
+    // </div>
+    // !
+    // !css modules
+    <div>
+      <CheckBox onChange={onChange} checked={check}>다음 약관에 모두 동의</CheckBox>
+    </div>
+    );
+
 }
 
 export default App;
