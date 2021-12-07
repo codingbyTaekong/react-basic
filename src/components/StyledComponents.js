@@ -26,35 +26,52 @@ const colorStyles = css`
             &:active {
                 background: ${darken(0.1, selected)};
             }
+            ${props=> props.outline && css`
+                color : ${selected};
+                background: none;
+                border : 1px solid ${selected};
+                &:hover {
+                    background: ${selected};
+                    color : white;
+                }
+            `}
         `;
     }}
 `;
 
+const sizes = {
+    large : {
+        height: '3rem',
+        fontSize : '1.25rem'
+    },
+    medium : {
+        height: '2.25rem',
+        fontSize : '1rem'
+    },
+    small : {
+        height: '1.75rem',
+        fontSize : '0.875rem'
+    }
+}
+
+
 const sizeStyles = css`
-    ${props => 
-    props.size=== 'large' &&
-    css`
-        height: 3rem;
-        font-size: 1.25rem;
-    `
-    }
-    ${props => 
-    props.size=== 'medium' &&
-    css`
-        height: 2.25rem;
-        font-size: 1rem;
-    `
-    }
-    ${props => 
-    props.size=== 'small' &&
-    css`
-        height: 1.75rem;
-        font-size: 0.875rem;
-    `
-    }
+    ${({size})=> css`
+        height: ${sizes[size].height};
+        font-size: ${sizes[size].fontSize};
+    `}
 `;
 
-
+const fullWidthStyle = css`
+    ${props=> props.fullWidth && css`
+        width: 100%;
+        justify-content: center;
+        &:not(:first-child) {
+            margin-left: 0;
+            margin-top: 1rem;
+        }
+    `}
+`;
 
 const StyledButton = styled.button`
     /* 공통스타일 */
@@ -69,27 +86,22 @@ const StyledButton = styled.button`
     padding-right: 1rem;
     align-items: center;
 
-    /* 크기 */
-    height: 2.25rem;
-    font-size: 1rem;
-    ${colorStyles}
-    ${sizeStyles}
-
     
-    & + & {
+    ${sizeStyles}
+    ${colorStyles}
+    &:not(:first-child) {
         margin-left: 1rem;
     }
+    ${fullWidthStyle}
+
 `;
 
 
-function StyledComponents({children, color, size, ...rest}) {
-
+function StyledComponents({children, color, size, outline, fullWidth, ...rest}) {
     return(
     <>
-        {/* <Circle color="blue" huge/> */}
-        <StyledButton color={color} size={size} {...rest}>{children}</StyledButton>
+        <StyledButton color={color} size={size} fullWidth={fullWidth} outline={outline} {...rest}>{children}</StyledButton>
     </>
-    
     );
 }
 

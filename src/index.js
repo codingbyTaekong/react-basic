@@ -10,6 +10,8 @@ import ErrorBoundary from './components/ErrorBoundary';
 import App from './App';
 import StyledComponents from './components/StyledComponents';
 import styled, {ThemeProvider} from 'styled-components'
+import Dialog from './components/Dialog';
+import App2 from './components/App2'
 
 const AppBlock = styled.div`
   width: 512px;
@@ -51,7 +53,9 @@ ReactDOM.render(
       {/* <Error /> */}
     {/* </ErrorBoundary> */}
     {/* <App/> */}
-    <ThemeProvider theme={{palette}}>
+    <App2/>
+
+    {/* <ThemeProvider theme={{palette}}>
       <AppBlock>
         <ButtonGroup>
           <StyledComponents>버튼</StyledComponents>
@@ -60,11 +64,22 @@ ReactDOM.render(
         </ButtonGroup>
         <ButtonGroup>
           <StyledComponents color="gray" size="large">버튼</StyledComponents>
-          <StyledComponents color="gray" size="medium">버튼</StyledComponents>
-          <StyledComponents color="gray" size="small">버튼</StyledComponents>
+          <StyledComponents color="blue" size="medium">버튼</StyledComponents>
+          <StyledComponents color="pink" size="small">버튼</StyledComponents>
+        </ButtonGroup>
+        <ButtonGroup>
+          <StyledComponents color="gray" size="large" outline>버튼</StyledComponents>
+          <StyledComponents color="blue" size="medium" outline>버튼</StyledComponents>
+          <StyledComponents color="pink" size="small" outline>버튼</StyledComponents>
+        </ButtonGroup>
+        <ButtonGroup>
+          <StyledComponents color="gray" size="large"  fullWidth>버튼</StyledComponents>
+          <StyledComponents color="blue" size="large" fullWidth>버튼</StyledComponents>
+          <StyledComponents color="pink" size="large" fullWidth>버튼</StyledComponents>
         </ButtonGroup>
       </AppBlock>
-    </ThemeProvider>
+      <Dialog title="정말로 삭제하시겠습니까?"cancelText="취소" confirmText="확인">데이터를 정말로 삭제하시겠습니까?</Dialog>
+    </ThemeProvider> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
