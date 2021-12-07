@@ -38,27 +38,24 @@ const colorStyles = css`
         `;
     }}
 `;
-
 const sizes = {
     large : {
-        height: '3rem',
+        height : '3rem',
         fontSize : '1.25rem'
     },
     medium : {
-        height: '2.25rem',
+        height : '2.25rem',
         fontSize : '1rem'
     },
     small : {
-        height: '1.75rem',
+        height : '1.75rem',
         fontSize : '0.875rem'
     }
 }
-
-
 const sizeStyles = css`
     ${({size})=> css`
-        height: ${sizes[size].height};
-        font-size: ${sizes[size].fontSize};
+        height : ${sizes[size].height};
+        font-size : ${sizes[size].fontSize}
     `}
 `;
 
@@ -85,15 +82,12 @@ const StyledButton = styled.button`
     padding-left: 1rem;
     padding-right: 1rem;
     align-items: center;
-
-    
     ${sizeStyles}
     ${colorStyles}
     &:not(:first-child) {
         margin-left: 1rem;
     }
     ${fullWidthStyle}
-
 `;
 
 
